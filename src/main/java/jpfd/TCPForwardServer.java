@@ -16,7 +16,7 @@ import java.net.*;
 public class TCPForwardServer implements Runnable
 {
 	private static Logger log = Logger.getLogger(TCPForwardServer.class);
-	private static ServerSocket serverSocket;
+	private ServerSocket serverSocket;
 
 	private String destHost = null;
 	private int destPort = 0;

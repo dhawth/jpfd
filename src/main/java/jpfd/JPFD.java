@@ -19,6 +19,7 @@ public class JPFD implements Runnable
 	private boolean debug = false;
 
 	private List<TCPForwardServer> tcpForwarders = new ArrayList<TCPForwardServer>();
+	private List<Thread> threads = new ArrayList<Thread>();
 
 	public static void main(String args[])
 	{
@@ -123,6 +124,7 @@ public class JPFD implements Runnable
 
 			Thread t = new Thread(s, "TCPForward: " + listenHost + ":" + listenPort + " => " + destHost + ":" + destPort);
 			t.start();
+			threads.add(t);
 		}
 
 		log.debug("done starting threads");
